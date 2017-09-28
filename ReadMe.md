@@ -5,7 +5,8 @@
 使用：
 
 ```python
- 	pt = PosTagging()
+ 	
+    pt = PosTagging()
     pt.processCorpus("../corpus/199801.txt") #训练部分
     pt.saveModel(model_name)
     pt.loadModel(model_name)
@@ -28,11 +29,13 @@
 使用:
 
 ```python
+    
     seg = CNSegmentation()
     seg.processCorpus('../corpus/199801.txt')
     seg.saveModel(model_name)
     seg.loadModel(model_name)
     seg.cutSentence('代表北大的人大代表，代表人大的北大博士')
+    
 ```
 
 也可以hold住一些歧义。
@@ -51,19 +54,20 @@
 
 结果如下:
 
-=== SUMMARY:
-=== TOTAL INSERTIONS:	2824
-=== TOTAL DELETIONS:	11587
-=== TOTAL SUBSTITUTIONS:	17204
-=== TOTAL NCHANGE:	31615
-=== TOTAL TRUE WORD COUNT:	104372
-=== TOTAL TEST WORD COUNT:	95609
-=== TOTAL TRUE WORDS RECALL:	0.724
-=== TOTAL TEST WORDS PRECISION:	0.791
-=== F MEASURE:	0.756
-=== OOV Rate:	0.138
-=== OOV Recall Rate:	0.765
-=== IV Recall Rate:	0.718
+- === SUMMARY:
+
+- === TOTAL INSERTIONS:	2824
+- === TOTAL DELETIONS:	11587
+- === TOTAL SUBSTITUTIONS:	17204
+- === TOTAL NCHANGE:	31615
+- === TOTAL TRUE WORD COUNT:	104372
+- === TOTAL TEST WORD COUNT:	95609
+- === TOTAL TRUE WORDS RECALL:	0.724
+- === TOTAL TEST WORDS PRECISION:	0.791
+- === F MEASURE:	0.756
+- === OOV Rate:	0.138
+- === OOV Recall Rate:	0.765
+- === IV Recall Rate:	0.718
 
 ​	准确度在80%左右，召回率偏低，对于没有加入词表的情况来说，这个结果还算可以，因为发现大部分分错的语句，是由于训练集中没有这些语料，如果加入词表判断会改善这种情况，后期有很大提升空间，可以试着加一些技巧还有多个模型结合去做，也需要进一步增加训练集。
 
